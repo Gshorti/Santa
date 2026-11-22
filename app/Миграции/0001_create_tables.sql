@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS exchanges (
     id                   BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name                 VARCHAR(128) NOT NULL,
-    admin_id             BIGINT       NOT NULL REFERENCES users(id),
+    admin_id             BIGINT       NOT NULL,
     place                TEXT,
     money                NUMERIC(12, 2),
     distribution_date    DATE,
