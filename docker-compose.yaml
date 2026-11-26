@@ -2,6 +2,7 @@ services:
   user-service:
       build:
         context: .
+      restart: always
       volumes:
         - ./:/Santa
       ports:
@@ -23,6 +24,7 @@ services:
 
   db:
     image: postgres:17-alpine
+    restart: always
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASS}
@@ -36,6 +38,7 @@ services:
 
   files:
     image: nginx:latest
+    restart: always
     ports:
       - "7777:80"
     volumes:
